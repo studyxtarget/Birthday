@@ -5,7 +5,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>A Special Surprise 🎂</title>
 <style>
-  @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=Quicksand:wght@400;500;600;700&display=swap');
+  @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=Quicksand:wght@400;500;600;700&family=Caveat:wght@400;500;600;700&display=swap');
 
   :root {
     --pink:    #ff6b9d;
@@ -33,6 +33,33 @@
     width:100%; height:100%;
     pointer-events: none;
     z-index: 0;
+  }
+
+  /* ─── FLOATING WATERMARK NAME ─── */
+  .watermark-layer {
+    position: fixed; inset: 0;
+    z-index: 0;
+    pointer-events: none;
+    overflow: hidden;
+    opacity: .07;
+  }
+  .watermark-col {
+    position: absolute;
+    top: -60%;
+    width: 140px;
+    transform: translateX(-50%);
+    font-family: 'Playfair Display', serif;
+    font-weight: 700;
+    font-size: 1.3rem;
+    line-height: 3.4;
+    text-align: center;
+    color: var(--pink);
+    white-space: pre-line;
+    animation: watermark-drift 55s linear infinite;
+  }
+  @keyframes watermark-drift {
+    from { transform: translateX(-50%) translateY(0); }
+    to   { transform: translateX(-50%) translateY(60%); }
   }
 
   /* ─── SECTIONS BASE ─── */
@@ -170,7 +197,7 @@
     position: relative;
     width: 200px; height: 200px;
     margin: 0 auto 30px;
-    animation: gift-wiggle 2s ease-in-out infinite;
+    animation: gift-wiggle 12s ease-in-out infinite;
   }
   @keyframes gift-wiggle {
     0%,100%{transform:rotate(0deg)}
@@ -242,7 +269,32 @@
   .star-burst {
     position: absolute;
     font-size: 1.5rem;
-    animation: burst 0.8s ease-out forwards;
+    animation: burst 0.9s ease-out forwards;
+  }
+
+  /* ─── PHOTOS BURSTING OUT OF GIFT ─── */
+  .gift-photo-burst-wrap {
+    position: absolute; inset: 0;
+    pointer-events: none;
+    z-index: 6;
+  }
+  .gift-photo-burst {
+    position: absolute;
+    left: 50%; top: 50%;
+    width: 64px; height: 64px;
+    margin-left: -32px; margin-top: -32px;
+    border-radius: 12px;
+    overflow: hidden;
+    border: 2px solid var(--gold);
+    box-shadow: 0 8px 24px rgba(0,0,0,.45), 0 0 0 1px rgba(255,255,255,.15) inset;
+    opacity: 0;
+    background: var(--card);
+    animation: photo-burst 1.7s cubic-bezier(.17,.89,.32,1.28) forwards;
+  }
+  .gift-photo-burst img {
+    width: 100%; height: 100%;
+    object-fit: cover;
+    display: block;
   }
 
   /* ═══════════════════════════════
@@ -316,38 +368,66 @@
 
   .slide {
     display: none;
-    border-radius: 20px;
-    overflow: hidden;
-    box-shadow: 0 20px 60px rgba(0,0,0,.5);
     position: relative;
   }
   .slide.active { display: block; animation: fadeIn .5s ease; }
 
-  .slide-inner {
+  /* ─── POLAROID PHOTO STYLE ─── */
+  .polaroid {
+    background: #fdfbf6;
+    padding: 14px 14px 56px 14px;
+    border-radius: 3px;
+    box-shadow: 0 25px 60px rgba(0,0,0,.5), 0 0 0 1px rgba(0,0,0,.04);
+    position: relative;
+    transform: rotate(var(--tilt, -2deg));
+    transition: transform .3s ease;
+  }
+  .slide:nth-child(1) .polaroid { --tilt: -2.5deg; }
+  .slide:nth-child(2) .polaroid { --tilt: 1.8deg; }
+  .slide:nth-child(3) .polaroid { --tilt: -1.5deg; }
+  .slide:nth-child(4) .polaroid { --tilt: 2.2deg; }
+
+  .polaroid-tape {
+    position: absolute;
+    top: -12px; left: 50%;
+    width: 64px; height: 26px;
+    background: rgba(255,255,255,.55);
+    border: 1px solid rgba(0,0,0,.04);
+    box-shadow: 0 2px 6px rgba(0,0,0,.15);
+    transform: translateX(-50%) rotate(-4deg);
+  }
+
+  .polaroid-photo {
     width: 100%;
-    aspect-ratio: 4/3;
-    background: var(--card);
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    font-size: 5rem;
-    border: 1px solid rgba(255,255,255,.1);
+    aspect-ratio: 1/1;
+    overflow: hidden;
+    border-radius: 2px;
+    background: #111;
   }
 
-  .slide img {
+  .polaroid-photo img {
     width: 100%; height: 100%;
-    object-fit: contain;
-    background: #000;
+    object-fit: cover;
+    display: block;
   }
 
-  .slide-caption {
-    position: absolute; bottom: 0; left: 0; right: 0;
-    background: linear-gradient(transparent, rgba(0,0,0,.7));
-    padding: 20px;
-    font-size: .9rem;
-    color: #fff;
+  .polaroid-caption {
+    position: absolute;
+    bottom: 10px; left: 0; right: 0;
     text-align: center;
+    font-family: 'Caveat', cursive;
+    font-weight: 600;
+    font-size: 1.35rem;
+    color: #4a3b2a;
+  }
+
+  .memory-counter {
+    text-align: center;
+    margin-top: 16px;
+    color: rgba(255,255,255,.45);
+    font-size: .85rem;
+    letter-spacing: 2px;
+    text-transform: uppercase;
   }
 
   .slide-nav {
@@ -514,6 +594,100 @@
   }
   .share-btn:hover { transform: scale(1.05); box-shadow: 0 15px 50px rgba(255,215,0,.5); }
 
+  /* ─── SECRET LETTER BUTTON + MODAL ─── */
+  .secret-btn {
+    display: inline-block;
+    margin-top: 18px;
+    padding: 14px 36px;
+    background: transparent;
+    border: 2px solid var(--pink);
+    border-radius: 50px;
+    font-family: 'Quicksand', sans-serif;
+    font-size: .95rem;
+    font-weight: 700;
+    color: #fff;
+    cursor: pointer;
+    transition: all .3s;
+  }
+  .secret-btn:hover { background: var(--pink); transform: scale(1.05); }
+
+  .secret-overlay {
+    position: fixed; inset: 0;
+    background: rgba(10,0,20,.8);
+    backdrop-filter: blur(8px);
+    display: flex; align-items: center; justify-content: center;
+    padding: 20px;
+    z-index: 9500;
+    opacity: 0; visibility: hidden;
+    transition: opacity .4s, visibility .4s;
+  }
+  .secret-overlay.show { opacity: 1; visibility: visible; }
+
+  .secret-letter {
+    position: relative;
+    max-width: 480px; width: 100%;
+    max-height: 85vh;
+    overflow-y: auto;
+    background: linear-gradient(165deg, #fff8e9, #fdf2dc);
+    color: #4a3520;
+    padding: 46px 38px;
+    border-radius: 6px;
+    box-shadow: 0 30px 90px rgba(0,0,0,.6);
+    transform: scale(.8) rotate(-2deg);
+    transition: transform .4s cubic-bezier(.34,1.56,.64,1);
+  }
+  .secret-overlay.show .secret-letter { transform: scale(1) rotate(0deg); }
+
+  .secret-letter-title {
+    font-family: 'Caveat', cursive;
+    font-weight: 700;
+    font-size: 1.8rem;
+    text-align: center;
+    margin-bottom: 18px;
+    color: #c0392b;
+  }
+
+  .secret-letter-text {
+    font-family: 'Caveat', cursive;
+    font-size: 1.4rem;
+    line-height: 1.7;
+    font-weight: 500;
+  }
+
+  .secret-close {
+    position: absolute; top: 10px; right: 14px;
+    background: none; border: none;
+    font-size: 1.3rem; color: #4a3520;
+    cursor: pointer; line-height: 1;
+  }
+
+  /* ─── MUSIC TOGGLE ─── */
+  .music-toggle {
+    position: fixed;
+    bottom: 24px; left: 24px;
+    width: 48px; height: 48px;
+    border-radius: 50%;
+    border: 1px solid rgba(255,255,255,.25);
+    background: var(--card);
+    backdrop-filter: blur(10px);
+    color: #fff;
+    font-size: 1.3rem;
+    display: none;
+    align-items: center; justify-content: center;
+    cursor: pointer;
+    z-index: 200;
+    transition: transform .2s;
+  }
+  .music-toggle:hover { transform: scale(1.1); }
+
+  /* ─── FIREWORKS CANVAS ─── */
+  #fireworks-canvas {
+    position: fixed; inset: 0;
+    pointer-events: none;
+    z-index: 8999;
+    display: none;
+  }
+
   /* ─── CONFETTI CANVAS ─── */
   #confetti-canvas {
     position: fixed; inset: 0;
@@ -566,6 +740,12 @@
     0%   { opacity:1; transform:scale(0) translate(0,0); }
     100% { opacity:0; transform:scale(1.5) translate(var(--tx,40px), var(--ty,-40px)); }
   }
+  @keyframes photo-burst {
+    0%   { opacity:0; transform: scale(.25) rotate(0deg); }
+    18%  { opacity:1; }
+    65%  { opacity:1; transform: translate(var(--tx,0px), var(--ty,0px)) scale(1) rotate(var(--rot,0deg)); }
+    100% { opacity:0; transform: translate(var(--tx,0px), calc(var(--ty,0px) - 55px)) scale(.82) rotate(var(--rot,0deg)); }
+  }
 
   /* ─── RESPONSIVE ─── */
   @media (max-width: 500px) {
@@ -578,11 +758,50 @@
 </head>
 <body>
 
+<!-- BACKGROUND MUSIC -->
+<audio id="bgm" loop>
+  <source src="birthday.mp3" type="audio/mpeg">
+</audio>
+
 <!-- PARTICLES -->
 <canvas id="particles-canvas"></canvas>
 
+<!-- FLOATING WATERMARK NAME -->
+<div class="watermark-layer" id="watermark-layer">
+  <div class="watermark-col" style="left:12%; animation-delay:0s;">Najiya ❤️
+Najiya ❤️
+Najiya ❤️
+Najiya ❤️
+Najiya ❤️
+Najiya ❤️</div>
+  <div class="watermark-col" style="left:38%; animation-delay:-18s;">Najiya ❤️
+Najiya ❤️
+Najiya ❤️
+Najiya ❤️
+Najiya ❤️
+Najiya ❤️</div>
+  <div class="watermark-col" style="left:64%; animation-delay:-32s;">Najiya ❤️
+Najiya ❤️
+Najiya ❤️
+Najiya ❤️
+Najiya ❤️
+Najiya ❤️</div>
+  <div class="watermark-col" style="left:90%; animation-delay:-9s;">Najiya ❤️
+Najiya ❤️
+Najiya ❤️
+Najiya ❤️
+Najiya ❤️
+Najiya ❤️</div>
+</div>
+
 <!-- CONFETTI -->
 <canvas id="confetti-canvas"></canvas>
+
+<!-- FIREWORKS -->
+<canvas id="fireworks-canvas"></canvas>
+
+<!-- MUSIC TOGGLE -->
+<button class="music-toggle" id="music-toggle" onclick="toggleMusic()" aria-label="Toggle music">🔊</button>
 
 <!-- NAV DOTS -->
 <div class="nav-dots" id="nav-dots"></div>
@@ -635,6 +854,7 @@
       <div class="gift-ribbon-v"></div>
     </div>
     <div class="gift-stars" id="gift-stars"></div>
+    <div class="gift-photo-burst-wrap" id="gift-photo-burst-wrap"></div>
   </div>
   <p class="gift-hint" id="gift-hint">👆 Tap to open!</p>
 </section>
@@ -667,32 +887,40 @@
 
   <div class="slideshow-wrap">
     <div class="slide active" id="slide-0">
-      <div class="slide-inner">
-        <img src="photo1.jpg" alt="Memory 1" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
-        
+      <div class="polaroid">
+        <div class="polaroid-tape"></div>
+        <div class="polaroid-photo">
+          <img src="photo1.jpg" alt="Memory 1" onerror="this.parentElement.style.background='linear-gradient(135deg,#444,#222)';this.style.display='none'">
+        </div>
+        <div class="polaroid-caption">A beautiful childhood memory ❤️</div>
       </div>
-      <div class="slide-caption">A beautiful childhood memory ❤️</div>
     </div>
     <div class="slide" id="slide-1">
-      <div class="slide-inner">
-        <img src="photo2.jpg" alt="Memory 2" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
-        
+      <div class="polaroid">
+        <div class="polaroid-tape"></div>
+        <div class="polaroid-photo">
+          <img src="photo2.jpg" alt="Memory 2" onerror="this.parentElement.style.background='linear-gradient(135deg,#444,#222)';this.style.display='none'">
+        </div>
+        <div class="polaroid-caption">One of our happiest moments 😊</div>
       </div>
-      <div class="slide-caption">One of our happiest moments 😊</div>
     </div>
     <div class="slide" id="slide-2">
-      <div class="slide-inner">
-        <img src="photo3.jpg" alt="Memory 3" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
-        
+      <div class="polaroid">
+        <div class="polaroid-tape"></div>
+        <div class="polaroid-photo">
+          <img src="photo3.jpg" alt="Memory 3" onerror="this.parentElement.style.background='linear-gradient(135deg,#444,#222)';this.style.display='none'">
+        </div>
+        <div class="polaroid-caption">A memory I will always cherish 🌸</div>
       </div>
-      <div class="slide-caption">A memory I will always cherish 🌸</div>
     </div>
     <div class="slide" id="slide-3">
-      <div class="slide-inner">
-        <img src="photo4.jpg" alt="Memory 4" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
-        
+      <div class="polaroid">
+        <div class="polaroid-tape"></div>
+        <div class="polaroid-photo">
+          <img src="photo4.jpg" alt="Memory 4" onerror="this.parentElement.style.background='linear-gradient(135deg,#444,#222)';this.style.display='none'">
+        </div>
+        <div class="polaroid-caption">Having a sister like you is a blessing ❤️</div>
       </div>
-      <div class="slide-caption">Having a sister like you is a blessing ❤️</div>
     </div>
 
     <div class="slide-nav">
@@ -700,6 +928,7 @@
       <div class="slide-dots" id="slide-dots"></div>
       <button class="slide-btn" onclick="changeSlide(1)">→</button>
     </div>
+    <p class="memory-counter" id="memory-counter">Memory 1 of 4</p>
   </div>
 </section>
 
@@ -766,7 +995,31 @@
   </p>
 
   <button class="share-btn" onclick="launchConfetti()">🎊 Celebrate! Launch Confetti</button>
+  <br>
+  <button class="secret-btn" onclick="openSecretLetter()">Open Secret Letter 💌</button>
 </section>
+
+<!-- ══════════════════════════════════════
+     SECRET LETTER MODAL
+══════════════════════════════════════ -->
+<div class="secret-overlay" id="secret-overlay" onclick="closeSecretLetterIfBackdrop(event)">
+  <div class="secret-letter">
+    <button class="secret-close" onclick="closeSecretLetter()">✕</button>
+    <p class="secret-letter-title">💌 A Secret Letter For My Little Sister</p>
+    <p class="secret-letter-text">
+      Dear Sister,<br><br>
+      Today is your special day, and I just want you to know how important you are to me.<br><br>
+      You may be younger than me, but you bring so much happiness, laughter, and energy into our lives.<br><br>
+      No matter how much we argue, tease each other, or fight over silly things, you will always be one of the most special people in my life.<br><br>
+      I am proud of the person you are becoming, and I hope you always believe in yourself and your dreams.<br><br>
+      May your life be filled with happiness, success, good health, and countless beautiful memories.<br><br>
+      Always keep smiling, because your smile makes everyone around you happy.<br><br>
+      Happy Birthday, my little sister. ❤️🎂<br><br>
+      With lots of love,<br>
+      Your Brother 💙
+    </p>
+  </div>
+</div>
 
 <script>
 // ══════════════════════
@@ -887,23 +1140,62 @@ function openGift() {
   document.getElementById('gift-box').classList.add('opened');
   document.getElementById('gift-hint').textContent = '🎉 Surprise!';
 
-  // Burst stars
+  // Background music starts (Sabse impactful)
+  const bgm = document.getElementById('bgm');
+  bgm.volume = 0.5;
+  bgm.play().catch(() => {});
+  document.getElementById('music-toggle').style.display = 'flex';
+
+  // Voice greeting
+  if ('speechSynthesis' in window) {
+    const utter = new SpeechSynthesisUtterance('Happy Birthday!');
+    utter.pitch = 1.15;
+    utter.rate = 0.95;
+    speechSynthesis.speak(utter);
+  }
+
+  // Confetti rain right when the box opens
+  launchConfetti();
+
+  // Burst of 🎉🎊✨ emojis around the box
   const stars  = document.getElementById('gift-stars');
   const emojis = ['✨','🌟','💫','⭐','🎊','🎉'];
-  const angles  = [0, 45, 90, 135, 180, 225, 270, 315];
+  const angles  = [0, 30, 60, 90, 120, 150, 180, 210, 240, 270, 300, 330];
   angles.forEach(a => {
     const el = document.createElement('span');
     el.className = 'star-burst';
     const rad = a * Math.PI / 180;
-    el.style.setProperty('--tx', Math.cos(rad)*80 + 'px');
-    el.style.setProperty('--ty', Math.sin(rad)*80 + 'px');
+    el.style.setProperty('--tx', Math.cos(rad) * 100 + 'px');
+    el.style.setProperty('--ty', Math.sin(rad) * 100 + 'px');
     el.style.left = '50%'; el.style.top = '50%';
     el.textContent = emojis[Math.floor(Math.random() * emojis.length)];
     el.style.animationDelay = Math.random() * 0.3 + 's';
     stars.appendChild(el);
   });
 
-  setTimeout(() => scrollToSection(2), 1500);
+  // The 4 photos pop out of the gift, small size, spreading outward
+  const photoWrap = document.getElementById('gift-photo-burst-wrap');
+  const photos = ['photo1.jpg', 'photo2.jpg', 'photo3.jpg', 'photo4.jpg'];
+  const photoAngles = [-125, -55, 55, 125]; // spread upward, two left two right
+  photos.forEach((src, idx) => {
+    const el = document.createElement('div');
+    el.className = 'gift-photo-burst';
+    const rad = photoAngles[idx] * Math.PI / 180;
+    const dist = 110 + Math.random() * 30;
+    el.style.setProperty('--tx', (Math.cos(rad) * dist) + 'px');
+    el.style.setProperty('--ty', (Math.sin(rad) * dist) + 'px');
+    el.style.setProperty('--rot', (Math.random() * 30 - 15) + 'deg');
+    el.style.animationDelay = (0.15 + idx * 0.12) + 's';
+    const img = document.createElement('img');
+    img.src = src;
+    img.alt = 'Memory ' + (idx + 1);
+    img.onerror = function () { el.style.display = 'none'; };
+    el.appendChild(img);
+    photoWrap.appendChild(el);
+  });
+  setTimeout(() => { photoWrap.innerHTML = ''; }, 2000);
+
+  setTimeout(() => scrollToSection(2), 1600);
 }
 
 // ══════════════════════
@@ -948,6 +1240,7 @@ function initSlider() {
     dot.onclick = () => goToSlide(i);
     dotsContainer.appendChild(dot);
   }
+  updateMemoryCounter();
   // Auto-advance
   setInterval(() => changeSlide(1), 4000);
 }
@@ -962,6 +1255,12 @@ function goToSlide(n) {
   currentSlide = n;
   document.getElementById('slide-' + currentSlide).classList.add('active');
   document.querySelectorAll('.dot')[currentSlide].classList.add('active');
+  updateMemoryCounter();
+}
+
+function updateMemoryCounter() {
+  const el = document.getElementById('memory-counter');
+  if (el) el.textContent = `Memory ${currentSlide + 1} of ${totalSlides}`;
 }
 
 // ══════════════════════
@@ -1024,9 +1323,95 @@ function launchConfetti() {
     });
     frame++;
     if (frame < 300) requestAnimationFrame(animateConfetti);
-    else { canvas.style.display = 'none'; frame = 0; }
+    else { canvas.style.display = 'none'; frame = 0; launchFireworks(); }
   }
   animateConfetti();
+}
+
+// ══════════════════════
+// FIREWORKS (after confetti)
+// ══════════════════════
+function launchFireworks(durationMs = 4000) {
+  const canvas = document.getElementById('fireworks-canvas');
+  canvas.style.display = 'block';
+  canvas.width  = window.innerWidth;
+  canvas.height = window.innerHeight;
+  const ctx = canvas.getContext('2d');
+
+  const colors = ['#ff6b9d','#ffd700','#c471ed','#12c2e9','#ff4081','#ffb347','#fff'];
+  let particles = [];
+
+  function spawnBurst() {
+    const x = canvas.width * (0.15 + Math.random() * 0.7);
+    const y = canvas.height * (0.1 + Math.random() * 0.4);
+    const color = colors[Math.floor(Math.random() * colors.length)];
+    const count = 36 + Math.floor(Math.random() * 20);
+    for (let i = 0; i < count; i++) {
+      const angle = (Math.PI * 2 * i) / count;
+      const speed = Math.random() * 4 + 2;
+      particles.push({
+        x, y,
+        dx: Math.cos(angle) * speed,
+        dy: Math.sin(angle) * speed,
+        alpha: 1,
+        color,
+        size: Math.random() * 2 + 1.5,
+      });
+    }
+  }
+
+  const burstTimer = setInterval(spawnBurst, 550);
+  spawnBurst();
+  const start = performance.now();
+
+  function animateFireworks() {
+    const now = performance.now();
+    ctx.clearRect(0, 0, canvas.width, canvas.height);
+    particles.forEach(p => {
+      p.x += p.dx;
+      p.y += p.dy;
+      p.dy += 0.045;
+      p.alpha -= 0.012;
+      ctx.globalAlpha = Math.max(p.alpha, 0);
+      ctx.fillStyle = p.color;
+      ctx.beginPath();
+      ctx.arc(p.x, p.y, p.size, 0, Math.PI * 2);
+      ctx.fill();
+    });
+    particles = particles.filter(p => p.alpha > 0);
+    ctx.globalAlpha = 1;
+
+    if (now - start < durationMs || particles.length > 0) {
+      requestAnimationFrame(animateFireworks);
+    } else {
+      canvas.style.display = 'none';
+    }
+    if (now - start >= durationMs) clearInterval(burstTimer);
+  }
+  animateFireworks();
+}
+
+// ══════════════════════
+// MUSIC TOGGLE
+// ══════════════════════
+function toggleMusic() {
+  const bgm = document.getElementById('bgm');
+  const btn = document.getElementById('music-toggle');
+  if (bgm.paused) { bgm.play().catch(() => {}); btn.textContent = '🔊'; }
+  else { bgm.pause(); btn.textContent = '🔈'; }
+}
+
+// ══════════════════════
+// SECRET LETTER
+// ══════════════════════
+function openSecretLetter() {
+  document.getElementById('secret-overlay').classList.add('show');
+}
+function closeSecretLetter() {
+  document.getElementById('secret-overlay').classList.remove('show');
+}
+function closeSecretLetterIfBackdrop(e) {
+  if (e.target.id === 'secret-overlay') closeSecretLetter();
 }
 
 // ══════════════════════
