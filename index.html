@@ -838,6 +838,129 @@
   }
   .nav-dot.active { background: var(--pink); transform: scale(1.5); box-shadow: 0 0 12px var(--pink); }
 
+  /* ─── CUSTOMIZE FAB + PANEL ─── */
+  .customize-fab {
+    position: fixed;
+    bottom: 24px; right: 24px;
+    padding: 12px 20px;
+    border-radius: 50px;
+    border: 1px solid rgba(255,255,255,.25);
+    background: linear-gradient(165deg, var(--card-hi), var(--card));
+    backdrop-filter: blur(10px);
+    color: #fff;
+    font-family: 'Quicksand', sans-serif;
+    font-size: .85rem;
+    font-weight: 700;
+    letter-spacing: .3px;
+    cursor: pointer;
+    z-index: 200;
+    box-shadow: 0 8px 24px rgba(0,0,0,.3);
+    transition: transform .25s cubic-bezier(.22,1,.36,1), background .25s;
+  }
+  .customize-fab:hover { transform: translateY(-2px) scale(1.05); background: linear-gradient(165deg, rgba(255,107,157,.3), var(--card)); }
+
+  .customize-overlay {
+    position: fixed; inset: 0;
+    background: rgba(10,0,20,.75);
+    backdrop-filter: blur(8px);
+    display: flex; align-items: center; justify-content: center;
+    padding: 20px;
+    z-index: 9600;
+    opacity: 0; visibility: hidden;
+    transition: opacity .35s, visibility .35s;
+  }
+  .customize-overlay.show { opacity: 1; visibility: visible; }
+
+  .customize-panel {
+    position: relative;
+    max-width: 460px; width: 100%;
+    max-height: 88vh;
+    overflow-y: auto;
+    background: linear-gradient(165deg, #241242, #150826);
+    border: 1px solid rgba(255,107,157,.25);
+    border-radius: 20px;
+    padding: 40px 32px 30px;
+    box-shadow: 0 30px 90px rgba(0,0,0,.6);
+    transform: scale(.92);
+    transition: transform .35s cubic-bezier(.34,1.56,.64,1);
+  }
+  .customize-overlay.show .customize-panel { transform: scale(1); }
+
+  .customize-title {
+    font-family: 'Playfair Display', serif;
+    font-weight: 600;
+    font-size: 1.5rem;
+    text-align: center;
+    background: linear-gradient(90deg, var(--pink), var(--peach));
+    -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text;
+    margin-bottom: 6px;
+  }
+  .customize-sub {
+    text-align: center;
+    font-size: .82rem;
+    color: rgba(255,255,255,.5);
+    margin-bottom: 24px;
+  }
+
+  .cz-label {
+    display: block;
+    font-size: .78rem;
+    font-weight: 700;
+    letter-spacing: .4px;
+    text-transform: uppercase;
+    color: rgba(255,255,255,.6);
+    margin: 16px 0 6px;
+  }
+  .cz-hint { text-transform: none; font-weight: 500; color: rgba(255,255,255,.35); letter-spacing: 0; }
+
+  .cz-input, .cz-textarea {
+    width: 100%;
+    padding: 12px 14px;
+    border-radius: 12px;
+    border: 1px solid rgba(255,255,255,.15);
+    background: rgba(255,255,255,.06);
+    color: #fff;
+    font-family: 'Quicksand', sans-serif;
+    font-size: .92rem;
+    outline: none;
+    transition: border-color .2s, background .2s;
+  }
+  .cz-input:focus, .cz-textarea:focus { border-color: var(--pink); background: rgba(255,255,255,.1); }
+  .cz-textarea { resize: vertical; line-height: 1.5; }
+  select.cz-input { cursor: pointer; }
+  select.cz-input option { background: #241242; color: #fff; }
+
+  .cz-actions { display: flex; gap: 12px; margin-top: 26px; }
+  .cz-btn {
+    flex: 1;
+    padding: 13px;
+    border-radius: 50px;
+    border: none;
+    font-family: 'Quicksand', sans-serif;
+    font-weight: 700;
+    font-size: .9rem;
+    cursor: pointer;
+    transition: transform .2s;
+  }
+  .cz-btn:hover { transform: translateY(-2px); }
+  .cz-btn-reset { background: rgba(255,255,255,.1); color: #fff; border: 1px solid rgba(255,255,255,.2); }
+  .cz-btn-save { background: linear-gradient(90deg, var(--pink), var(--purple)); color: #fff; }
+
+  .cz-saved-note {
+    text-align: center;
+    font-size: .8rem;
+    color: var(--gold);
+    margin-top: 14px;
+    height: 1em;
+    opacity: 0;
+    transition: opacity .3s;
+  }
+  .cz-saved-note.show { opacity: 1; }
+
+  @media (max-width: 500px) {
+    .customize-fab { padding: 10px 16px; font-size: .78rem; bottom: 16px; right: 16px; }
+  }
+
   /* ─── SCROLL ARROW ─── */
   .scroll-hint {
     position: absolute; bottom: 30px;
@@ -902,32 +1025,7 @@
 <canvas id="particles-canvas"></canvas>
 
 <!-- FLOATING WATERMARK NAME -->
-<div class="watermark-layer" id="watermark-layer">
-  <div class="watermark-col" style="left:12%; animation-delay:0s;">Najiya ❤️
-Najiya ❤️
-Najiya ❤️
-Najiya ❤️
-Najiya ❤️
-Najiya ❤️</div>
-  <div class="watermark-col" style="left:38%; animation-delay:-18s;">Najiya ❤️
-Najiya ❤️
-Najiya ❤️
-Najiya ❤️
-Najiya ❤️
-Najiya ❤️</div>
-  <div class="watermark-col" style="left:64%; animation-delay:-32s;">Najiya ❤️
-Najiya ❤️
-Najiya ❤️
-Najiya ❤️
-Najiya ❤️
-Najiya ❤️</div>
-  <div class="watermark-col" style="left:90%; animation-delay:-9s;">Najiya ❤️
-Najiya ❤️
-Najiya ❤️
-Najiya ❤️
-Najiya ❤️
-Najiya ❤️</div>
-</div>
+<div class="watermark-layer" id="watermark-layer"></div>
 
 <!-- CONFETTI -->
 <canvas id="confetti-canvas"></canvas>
@@ -1002,9 +1100,9 @@ Najiya ❤️</div>
     <span class="msg-emoji">🎂</span>
     <div class="typewriter-text" id="typewriter"></div>
     <p class="msg-body" id="msg-body" style="opacity:0;transition:opacity 1s">
-      Today is a very special day because my little sister was born.<br><br>
+      <span id="msg-body-text">Today is a very special day because my little sister was born.<br><br>
       You bring happiness, laughter, and endless smiles to our family.<br><br>
-      May all your dreams come true and may you always stay happy, healthy, and successful. ❤️
+      May all your dreams come true and may you always stay happy, healthy, and successful. ❤️</span>
     </p>
   </div>
   <div class="scroll-hint" style="position:relative;margin-top:40px;">
@@ -1119,14 +1217,14 @@ Najiya ❤️</div>
 
   <div class="cake-wrap">🎂</div>
 
-  <h2 class="final-title">Happy Birthday Najish Hasan! 🎉</h2>
+  <h2 class="final-title" id="final-title-text">Happy Birthday Najish Hasan! 🎉</h2>
 
   <p class="final-msg">
-    Dear Little Sister,<br><br>
+    <span id="final-msg-body">Dear Little Sister,<br><br>
     This small website is a special gift made just for you.<br><br>
     Thank you for filling our lives with happiness and laughter.<br><br>
-    May your birthday be as wonderful as you are.<br><br>
-    <strong>Happy Birthday Najish Hasan! ❤️🎂🎉</strong>
+    May your birthday be as wonderful as you are.<br><br></span>
+    <strong id="final-msg-name">Happy Birthday Najish Hasan! ❤️🎂🎉</strong>
   </p>
 
   <button class="share-btn fancy-btn" onclick="launchConfetti()">🎊 Celebrate! Launch Confetti</button>
@@ -1140,8 +1238,8 @@ Najiya ❤️</div>
 <div class="secret-overlay" id="secret-overlay" onclick="closeSecretLetterIfBackdrop(event)">
   <div class="secret-letter">
     <button class="secret-close" onclick="closeSecretLetter()">✕</button>
-    <p class="secret-letter-title">💌 A Secret Letter For My Little Sister</p>
-    <p class="secret-letter-text">
+    <p class="secret-letter-title" id="secret-letter-title-text">💌 A Secret Letter For My Little Sister</p>
+    <p class="secret-letter-text" id="secret-letter-text-content">
       Dear Sister,<br><br>
       Today is your special day, and I just want you to know how important you are to me.<br><br>
       You may be younger than me, but you bring so much happiness, laughter, and energy into our lives.<br><br>
@@ -1153,6 +1251,60 @@ Najiya ❤️</div>
       With lots of love,<br>
       Your Brother 💙
     </p>
+  </div>
+</div>
+
+<!-- ══════════════════════════════════════
+     CUSTOMIZE PANEL
+══════════════════════════════════════ -->
+<button class="customize-fab" id="customize-fab" onclick="openCustomize()" aria-label="Customize this page">⚙️ Customize</button>
+
+<div class="customize-overlay" id="customize-overlay" onclick="closeCustomizeIfBackdrop(event)">
+  <div class="customize-panel">
+    <button class="secret-close" onclick="closeCustomize()">✕</button>
+    <h3 class="customize-title">✨ Customize Your Surprise</h3>
+    <p class="customize-sub">Change the details below, then hit Save. It's remembered on this device.</p>
+
+    <label class="cz-label">Nickname <span class="cz-hint">(watermark + greeting)</span></label>
+    <input type="text" id="cz-nickname" class="cz-input" placeholder="e.g. Najiya">
+
+    <label class="cz-label">Full Name <span class="cz-hint">(final banner)</span></label>
+    <input type="text" id="cz-fullname" class="cz-input" placeholder="e.g. Najish Hasan">
+
+    <label class="cz-label">Relation</label>
+    <select id="cz-relation" class="cz-input">
+      <option value="Little Sister">Little Sister</option>
+      <option value="Little Brother">Little Brother</option>
+      <option value="Sister">Sister</option>
+      <option value="Brother">Brother</option>
+      <option value="Best Friend">Best Friend</option>
+      <option value="Love">Love</option>
+      <option value="Daughter">Daughter</option>
+      <option value="Son">Son</option>
+    </select>
+
+    <label class="cz-label">Your Signature <span class="cz-hint">(secret letter sign-off)</span></label>
+    <input type="text" id="cz-signature" class="cz-input" placeholder="e.g. Your Brother">
+
+    <label class="cz-label">Theme</label>
+    <select id="cz-theme" class="cz-input">
+      <option value="pink">🌸 Pink Dream (default)</option>
+      <option value="sunset">🌇 Sunset Gold</option>
+      <option value="galaxy">💜 Purple Galaxy</option>
+      <option value="ocean">🌊 Ocean Breeze</option>
+    </select>
+
+    <label class="cz-label">Birthday Message</label>
+    <textarea id="cz-message" class="cz-textarea" rows="4"></textarea>
+
+    <label class="cz-label">Secret Letter</label>
+    <textarea id="cz-letter" class="cz-textarea" rows="6"></textarea>
+
+    <div class="cz-actions">
+      <button class="cz-btn cz-btn-reset" onclick="resetCustomize()">Reset to Default</button>
+      <button class="cz-btn cz-btn-save" onclick="saveCustomize()">Save Changes</button>
+    </div>
+    <p class="cz-saved-note" id="cz-saved-note"></p>
   </div>
 </div>
 
@@ -1338,7 +1490,7 @@ function openGift() {
 // ══════════════════════
 function startTypewriter() {
   const el   = document.getElementById('typewriter');
-  const text = 'Happy Birthday My Cute Little Sister ❤️';
+  const text = window.CZ_CONFIG ? `Happy Birthday My Cute ${window.CZ_CONFIG.relation} ❤️` : 'Happy Birthday My Cute Little Sister ❤️';
   let i = 0;
   function type() {
     if (i < text.length) {
@@ -1548,6 +1700,145 @@ function closeSecretLetter() {
 function closeSecretLetterIfBackdrop(e) {
   if (e.target.id === 'secret-overlay') closeSecretLetter();
 }
+
+// ══════════════════════
+// CUSTOMIZE PANEL
+// ══════════════════════
+const CZ_DEFAULTS = {
+  nickname: 'Najiya',
+  fullname: 'Najish Hasan',
+  relation: 'Little Sister',
+  signature: 'Your Brother',
+  theme: 'pink',
+  message: 'Today is a very special day because my little sister was born.\n\nYou bring happiness, laughter, and endless smiles to our family.\n\nMay all your dreams come true and may you always stay happy, healthy, and successful. ❤️',
+  letter: 'Dear Sister,\n\nToday is your special day, and I just want you to know how important you are to me.\n\nYou may be younger than me, but you bring so much happiness, laughter, and energy into our lives.\n\nNo matter how much we argue, tease each other, or fight over silly things, you will always be one of the most special people in my life.\n\nI am proud of the person you are becoming, and I hope you always believe in yourself and your dreams.\n\nMay your life be filled with happiness, success, good health, and countless beautiful memories.\n\nAlways keep smiling, because your smile makes everyone around you happy.\n\nHappy Birthday, my little sister. ❤️🎂\n\nWith lots of love,\nYour Brother 💙'
+};
+
+const CZ_THEMES = {
+  pink:   { pink:'#ff6b9d', rose:'#ff4081', peach:'#ffb347', gold:'#ffd700', purple:'#c471ed', blue:'#12c2e9' },
+  sunset: { pink:'#ff8a5c', rose:'#ff5e62', peach:'#ffc93c', gold:'#ffe066', purple:'#ff6b9d', blue:'#ff9770' },
+  galaxy: { pink:'#c471ed', rose:'#a239ea', peach:'#f7797d', gold:'#e0aaff', purple:'#7b2ff7', blue:'#3a0ca3' },
+  ocean:  { pink:'#12c2e9', rose:'#0891b2', peach:'#5ee7df', gold:'#a0f0ed', purple:'#6a5af9', blue:'#00b4d8' }
+};
+
+function loadConfig() {
+  try {
+    const saved = JSON.parse(localStorage.getItem('birthdaySiteConfig'));
+    return saved ? { ...CZ_DEFAULTS, ...saved } : { ...CZ_DEFAULTS };
+  } catch (e) { return { ...CZ_DEFAULTS }; }
+}
+
+function textToHtml(str) {
+  return str.split('\n').map(line => line.trim()).join('<br>').replace(/(<br>){2,}/g, '<br><br>');
+}
+
+function renderWatermark(nickname) {
+  const layer = document.getElementById('watermark-layer');
+  layer.innerHTML = '';
+  const positions = [
+    { left: '12%', delay: '0s' },
+    { left: '38%', delay: '-18s' },
+    { left: '64%', delay: '-32s' },
+    { left: '90%', delay: '-9s' }
+  ];
+  positions.forEach(pos => {
+    const col = document.createElement('div');
+    col.className = 'watermark-col';
+    col.style.left = pos.left;
+    col.style.animationDelay = pos.delay;
+    col.textContent = Array(6).fill(nickname + ' ❤️').join('\n');
+    layer.appendChild(col);
+  });
+}
+
+function applyTheme(themeKey) {
+  const t = CZ_THEMES[themeKey] || CZ_THEMES.pink;
+  const root = document.documentElement.style;
+  root.setProperty('--pink', t.pink);
+  root.setProperty('--rose', t.rose);
+  root.setProperty('--peach', t.peach);
+  root.setProperty('--gold', t.gold);
+  root.setProperty('--purple', t.purple);
+  root.setProperty('--blue', t.blue);
+}
+
+function applyConfig(cfg) {
+  window.CZ_CONFIG = cfg;
+  applyTheme(cfg.theme);
+  renderWatermark(cfg.nickname);
+
+  document.title = `A Special Surprise for ${cfg.nickname} 🎂`;
+  document.getElementById('final-title-text').innerHTML = `Happy Birthday ${cfg.fullname}! 🎉`;
+  document.getElementById('final-msg-name').innerHTML = `Happy Birthday ${cfg.fullname}! ❤️🎂🎉`;
+  document.getElementById('secret-letter-title-text').innerHTML = `💌 A Secret Letter For My ${cfg.relation}`;
+  document.getElementById('msg-body-text').innerHTML = textToHtml(cfg.message);
+  document.getElementById('secret-letter-text-content').innerHTML = textToHtml(cfg.letter);
+
+  const finalBody = document.getElementById('final-msg-body');
+  if (finalBody) finalBody.innerHTML = `Dear ${cfg.relation},<br><br>This small website is a special gift made just for you.<br><br>Thank you for filling our lives with happiness and laughter.<br><br>May your birthday be as wonderful as you are.<br><br>`;
+
+  // Reset typewriter so it re-types with the new name next time message section is viewed
+  const tw = document.getElementById('typewriter');
+  if (tw) tw.textContent = '';
+}
+
+function populateCustomizeForm(cfg) {
+  document.getElementById('cz-nickname').value = cfg.nickname;
+  document.getElementById('cz-fullname').value = cfg.fullname;
+  document.getElementById('cz-relation').value = cfg.relation;
+  document.getElementById('cz-signature').value = cfg.signature;
+  document.getElementById('cz-theme').value = cfg.theme;
+  document.getElementById('cz-message').value = cfg.message;
+  document.getElementById('cz-letter').value = cfg.letter;
+}
+
+function openCustomize() {
+  populateCustomizeForm(window.CZ_CONFIG || loadConfig());
+  document.getElementById('customize-overlay').classList.add('show');
+}
+function closeCustomize() {
+  document.getElementById('customize-overlay').classList.remove('show');
+}
+function closeCustomizeIfBackdrop(e) {
+  if (e.target.id === 'customize-overlay') closeCustomize();
+}
+
+function saveCustomize() {
+  let letterText = document.getElementById('cz-letter').value;
+  const sig = document.getElementById('cz-signature').value.trim() || 'Your Brother';
+  // Ensure the sign-off in the letter reflects the signature field
+  letterText = letterText.replace(/\n(Your Brother|Your Sister|Yours truly|.*?)\s*(💙|❤️)?\s*$/, `\n${sig} 💙`);
+
+  const cfg = {
+    nickname:  document.getElementById('cz-nickname').value.trim()  || CZ_DEFAULTS.nickname,
+    fullname:  document.getElementById('cz-fullname').value.trim()  || CZ_DEFAULTS.fullname,
+    relation:  document.getElementById('cz-relation').value,
+    signature: sig,
+    theme:     document.getElementById('cz-theme').value,
+    message:   document.getElementById('cz-message').value.trim()   || CZ_DEFAULTS.message,
+    letter:    letterText.trim() || CZ_DEFAULTS.letter
+  };
+  localStorage.setItem('birthdaySiteConfig', JSON.stringify(cfg));
+  applyConfig(cfg);
+
+  const note = document.getElementById('cz-saved-note');
+  note.textContent = '✓ Saved! Your changes are live.';
+  note.classList.add('show');
+  setTimeout(() => note.classList.remove('show'), 2500);
+}
+
+function resetCustomize() {
+  localStorage.removeItem('birthdaySiteConfig');
+  applyConfig({ ...CZ_DEFAULTS });
+  populateCustomizeForm(CZ_DEFAULTS);
+  const note = document.getElementById('cz-saved-note');
+  note.textContent = 'Reset to default ✨';
+  note.classList.add('show');
+  setTimeout(() => note.classList.remove('show'), 2500);
+}
+
+// Apply saved (or default) config as early as possible
+applyConfig(loadConfig());
 
 // ══════════════════════
 // AUTO SCROLL
