@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>A Special Surprise 🎂</title>
+<title>For My Love — A Birthday Surprise ♡</title>
 <style>
   @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400;1,600&family=Quicksand:wght@400;500;600;700&family=Caveat:wght@400;500;600;700&display=swap');
 
@@ -838,129 +838,6 @@
   }
   .nav-dot.active { background: var(--pink); transform: scale(1.5); box-shadow: 0 0 12px var(--pink); }
 
-  /* ─── CUSTOMIZE FAB + PANEL ─── */
-  .customize-fab {
-    position: fixed;
-    bottom: 24px; right: 24px;
-    padding: 12px 20px;
-    border-radius: 50px;
-    border: 1px solid rgba(255,255,255,.25);
-    background: linear-gradient(165deg, var(--card-hi), var(--card));
-    backdrop-filter: blur(10px);
-    color: #fff;
-    font-family: 'Quicksand', sans-serif;
-    font-size: .85rem;
-    font-weight: 700;
-    letter-spacing: .3px;
-    cursor: pointer;
-    z-index: 200;
-    box-shadow: 0 8px 24px rgba(0,0,0,.3);
-    transition: transform .25s cubic-bezier(.22,1,.36,1), background .25s;
-  }
-  .customize-fab:hover { transform: translateY(-2px) scale(1.05); background: linear-gradient(165deg, rgba(255,107,157,.3), var(--card)); }
-
-  .customize-overlay {
-    position: fixed; inset: 0;
-    background: rgba(10,0,20,.75);
-    backdrop-filter: blur(8px);
-    display: flex; align-items: center; justify-content: center;
-    padding: 20px;
-    z-index: 9600;
-    opacity: 0; visibility: hidden;
-    transition: opacity .35s, visibility .35s;
-  }
-  .customize-overlay.show { opacity: 1; visibility: visible; }
-
-  .customize-panel {
-    position: relative;
-    max-width: 460px; width: 100%;
-    max-height: 88vh;
-    overflow-y: auto;
-    background: linear-gradient(165deg, #241242, #150826);
-    border: 1px solid rgba(255,107,157,.25);
-    border-radius: 20px;
-    padding: 40px 32px 30px;
-    box-shadow: 0 30px 90px rgba(0,0,0,.6);
-    transform: scale(.92);
-    transition: transform .35s cubic-bezier(.34,1.56,.64,1);
-  }
-  .customize-overlay.show .customize-panel { transform: scale(1); }
-
-  .customize-title {
-    font-family: 'Playfair Display', serif;
-    font-weight: 600;
-    font-size: 1.5rem;
-    text-align: center;
-    background: linear-gradient(90deg, var(--pink), var(--peach));
-    -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text;
-    margin-bottom: 6px;
-  }
-  .customize-sub {
-    text-align: center;
-    font-size: .82rem;
-    color: rgba(255,255,255,.5);
-    margin-bottom: 24px;
-  }
-
-  .cz-label {
-    display: block;
-    font-size: .78rem;
-    font-weight: 700;
-    letter-spacing: .4px;
-    text-transform: uppercase;
-    color: rgba(255,255,255,.6);
-    margin: 16px 0 6px;
-  }
-  .cz-hint { text-transform: none; font-weight: 500; color: rgba(255,255,255,.35); letter-spacing: 0; }
-
-  .cz-input, .cz-textarea {
-    width: 100%;
-    padding: 12px 14px;
-    border-radius: 12px;
-    border: 1px solid rgba(255,255,255,.15);
-    background: rgba(255,255,255,.06);
-    color: #fff;
-    font-family: 'Quicksand', sans-serif;
-    font-size: .92rem;
-    outline: none;
-    transition: border-color .2s, background .2s;
-  }
-  .cz-input:focus, .cz-textarea:focus { border-color: var(--pink); background: rgba(255,255,255,.1); }
-  .cz-textarea { resize: vertical; line-height: 1.5; }
-  select.cz-input { cursor: pointer; }
-  select.cz-input option { background: #241242; color: #fff; }
-
-  .cz-actions { display: flex; gap: 12px; margin-top: 26px; }
-  .cz-btn {
-    flex: 1;
-    padding: 13px;
-    border-radius: 50px;
-    border: none;
-    font-family: 'Quicksand', sans-serif;
-    font-weight: 700;
-    font-size: .9rem;
-    cursor: pointer;
-    transition: transform .2s;
-  }
-  .cz-btn:hover { transform: translateY(-2px); }
-  .cz-btn-reset { background: rgba(255,255,255,.1); color: #fff; border: 1px solid rgba(255,255,255,.2); }
-  .cz-btn-save { background: linear-gradient(90deg, var(--pink), var(--purple)); color: #fff; }
-
-  .cz-saved-note {
-    text-align: center;
-    font-size: .8rem;
-    color: var(--gold);
-    margin-top: 14px;
-    height: 1em;
-    opacity: 0;
-    transition: opacity .3s;
-  }
-  .cz-saved-note.show { opacity: 1; }
-
-  @media (max-width: 500px) {
-    .customize-fab { padding: 10px 16px; font-size: .78rem; bottom: 16px; right: 16px; }
-  }
-
   /* ─── SCROLL ARROW ─── */
   .scroll-hint {
     position: absolute; bottom: 30px;
@@ -1002,6 +879,34 @@
     .tl-dot { left: -38px !important; right: auto !important; }
     .msg-card { padding: 30px 20px; }
   }
+
+  /* ─── ROMANTIC-PASTEL AESTHETIC OVERRIDES ─── */
+  :root {
+    --pink:#ff7aa8; --rose:#ff4f87; --peach:#ffc6a5; --gold:#ffe3a3;
+    --purple:#b79ced; --blue:#9bdcf5; --dark:#120b1c;
+    --card:rgba(255,255,255,.055); --card-hi:rgba(255,255,255,.10);
+  }
+  body { background:#120b1c; }
+  .aurora-layer { opacity:.42; filter:blur(90px) saturate(1.05); }
+  .grain-layer { opacity:.025; }
+  .section { padding:56px 20px; }
+  .landing-title,.final-title { text-shadow:0 10px 45px rgba(255,122,168,.18); }
+  .landing-sub,.section-sub { max-width:620px; }
+  .fancy-btn { box-shadow:0 14px 45px rgba(255,79,135,.25); }
+  .msg-card { max-width:680px; border-radius:32px; padding:58px 48px; box-shadow:0 30px 100px rgba(0,0,0,.35),0 0 70px rgba(183,156,237,.12); }
+  .polaroid { box-shadow:0 30px 90px rgba(0,0,0,.5); }
+  .timeline-item { border-radius:22px; box-shadow:0 16px 45px rgba(0,0,0,.16); }
+  .secret-letter { border-radius:18px; }
+  .secret-letter-title { font-size:2.2rem; }
+  @media (max-width:500px){ .msg-card{padding:34px 22px;} .landing-title{font-size:2.35rem;} }
+
+
+/* ═══ CUSTOMIZER ═══ */
+.customize-trigger{position:fixed;top:18px;left:18px;z-index:9999;border:1px solid rgba(255,255,255,.25);background:rgba(20,8,35,.72);backdrop-filter:blur(14px);color:#fff;border-radius:999px;padding:11px 15px;font:600 13px Quicksand,sans-serif;cursor:pointer;box-shadow:0 10px 30px rgba(0,0,0,.25);transition:.25s}.customize-trigger:hover{transform:translateY(-2px);background:rgba(255,107,157,.25)}
+.customizer-overlay{position:fixed;inset:0;background:rgba(5,2,12,.72);backdrop-filter:blur(10px);z-index:10000;display:none;align-items:center;justify-content:center;padding:18px}.customizer-overlay.show{display:flex}
+.customizer{width:min(760px,100%);max-height:92vh;overflow:auto;background:linear-gradient(145deg,rgba(31,15,48,.98),rgba(13,8,25,.98));border:1px solid rgba(255,255,255,.14);border-radius:26px;box-shadow:0 30px 100px rgba(0,0,0,.55);padding:22px;color:#fff}.customizer-head{display:flex;justify-content:space-between;align-items:center;gap:15px;margin-bottom:16px}.customizer-head h3{font:700 25px 'Playfair Display',serif}.customizer-close{border:0;background:rgba(255,255,255,.1);color:#fff;width:38px;height:38px;border-radius:50%;cursor:pointer;font-size:18px}.customizer-tabs{display:flex;gap:7px;overflow:auto;padding-bottom:10px;margin-bottom:10px}.customizer-tab{white-space:nowrap;border:1px solid rgba(255,255,255,.12);background:rgba(255,255,255,.05);color:#ddd;border-radius:999px;padding:8px 12px;cursor:pointer;font:600 12px Quicksand}.customizer-tab.active{background:var(--pink);color:#fff;border-color:transparent}.customizer-pane{display:none}.customizer-pane.active{display:block}.cgrid{display:grid;grid-template-columns:1fr 1fr;gap:12px}.cfield{display:flex;flex-direction:column;gap:6px;margin:9px 0}.cfield.full{grid-column:1/-1}.cfield label{font-size:12px;color:#d9cde2;font-weight:600}.cfield input[type=text],.cfield input[type=url],.cfield textarea,.cfield select{width:100%;border:1px solid rgba(255,255,255,.12);background:rgba(255,255,255,.07);color:#fff;border-radius:12px;padding:10px 11px;outline:none;font:500 13px Quicksand}.cfield textarea{min-height:110px;resize:vertical}.cfield input[type=color]{width:100%;height:40px;border:0;background:transparent}.cfield input[type=file]{font-size:11px;color:#ddd}.switch{display:flex;align-items:center;justify-content:space-between;gap:12px;border:1px solid rgba(255,255,255,.1);background:rgba(255,255,255,.05);border-radius:13px;padding:11px 12px;margin:8px 0}.switch span{font-size:13px}.switch input{accent-color:var(--pink);width:18px;height:18px}.customizer-actions{display:flex;gap:8px;flex-wrap:wrap;margin-top:18px;padding-top:16px;border-top:1px solid rgba(255,255,255,.1)}.caction{border:1px solid rgba(255,255,255,.15);background:rgba(255,255,255,.07);color:#fff;border-radius:12px;padding:10px 14px;cursor:pointer;font:700 12px Quicksand}.caction.primary{background:var(--pink);border-color:transparent}.cnotice{font-size:11px;color:#bcaec7;margin-top:8px;line-height:1.5}.photo-row{border:1px solid rgba(255,255,255,.1);border-radius:15px;padding:11px;margin:9px 0;background:rgba(255,255,255,.04)}
+@media(max-width:600px){.customizer{padding:16px;border-radius:20px}.cgrid{grid-template-columns:1fr}.cfield.full{grid-column:auto}.customize-trigger{top:12px;left:12px}}
+
 </style>
 </head>
 <body>
@@ -1025,7 +930,32 @@
 <canvas id="particles-canvas"></canvas>
 
 <!-- FLOATING WATERMARK NAME -->
-<div class="watermark-layer" id="watermark-layer"></div>
+<div class="watermark-layer" id="watermark-layer">
+  <div class="watermark-col" style="left:12%; animation-delay:0s;">Najiya ✨
+Najiya ✨
+Najiya ✨
+Najiya ✨
+Najiya ✨
+Najiya ✨</div>
+  <div class="watermark-col" style="left:38%; animation-delay:-18s;">Najiya ✨
+Najiya ✨
+Najiya ✨
+Najiya ✨
+Najiya ✨
+Najiya ✨</div>
+  <div class="watermark-col" style="left:64%; animation-delay:-32s;">Najiya ✨
+Najiya ✨
+Najiya ✨
+Najiya ✨
+Najiya ✨
+Najiya ✨</div>
+  <div class="watermark-col" style="left:90%; animation-delay:-9s;">Najiya ✨
+Najiya ✨
+Najiya ✨
+Najiya ✨
+Najiya ✨
+Najiya ✨</div>
+</div>
 
 <!-- CONFETTI -->
 <canvas id="confetti-canvas"></canvas>
@@ -1042,10 +972,40 @@
 <!-- ══════════════════════════════════════
      LOADING
 ══════════════════════════════════════ -->
+
+<button class="customize-trigger" onclick="openCustomizer()">⚙ Customize</button>
+<div class="customizer-overlay" id="customizer-overlay" onclick="customizerBackdrop(event)">
+ <div class="customizer">
+  <div class="customizer-head"><h3>♡ Customize Your Surprise</h3><button class="customizer-close" onclick="closeCustomizer()">✕</button></div>
+  <div class="customizer-tabs">
+   <button class="customizer-tab active" data-pane="content">Content</button><button class="customizer-tab" data-pane="memories">Memories</button><button class="customizer-tab" data-pane="story">Story</button><button class="customizer-tab" data-pane="theme">Theme</button><button class="customizer-tab" data-pane="effects">Effects</button><button class="customizer-tab" data-pane="media">Music</button>
+  </div>
+  <div class="customizer-pane active" id="pane-content"><div class="cgrid">
+   <div class="cfield"><label>Landing title</label><input data-key="landingTitle" type="text"></div><div class="cfield"><label>Landing subtitle</label><input data-key="landingSub" type="text"></div>
+   <div class="cfield"><label>Open button</label><input data-key="openButton" type="text"></div><div class="cfield"><label>Gift title</label><input data-key="giftTitle" type="text"></div>
+   <div class="cfield"><label>Gift hint</label><input data-key="giftHint" type="text"></div><div class="cfield"><label>Birthday heading</label><input data-key="birthdayHeading" type="text"></div>
+   <div class="cfield full"><label>Birthday message</label><textarea data-key="birthdayMessage"></textarea></div>
+   <div class="cfield"><label>Memories heading</label><input data-key="memoriesTitle" type="text"></div><div class="cfield"><label>Memories subtitle</label><input data-key="memoriesSub" type="text"></div>
+   <div class="cfield"><label>Story heading</label><input data-key="storyTitle" type="text"></div><div class="cfield"><label>Story subtitle</label><input data-key="storySub" type="text"></div>
+   <div class="cfield"><label>Final heading</label><input data-key="finalTitle" type="text"></div><div class="cfield"><label>Celebrate button</label><input data-key="celebrateButton" type="text"></div>
+   <div class="cfield full"><label>Final message</label><textarea data-key="finalMessage"></textarea></div>
+   <div class="cfield full"><label>Secret letter</label><textarea data-key="letterText"></textarea></div>
+  </div></div>
+  <div class="customizer-pane" id="pane-memories"><div id="memory-editor"></div><p class="cnotice">Choose a photo from your device and edit its caption. Selected images are stored in this browser for this page.</p></div>
+  <div class="customizer-pane" id="pane-story"><div id="story-editor"></div><p class="cnotice">Edit each story card's label, emoji, title and description.</p></div>
+  <div class="customizer-pane" id="pane-theme"><div class="cgrid">
+   <div class="cfield"><label>Pink</label><input data-key="pink" type="color"></div><div class="cfield"><label>Rose</label><input data-key="rose" type="color"></div><div class="cfield"><label>Purple</label><input data-key="purple" type="color"></div><div class="cfield"><label>Blue</label><input data-key="blue" type="color"></div><div class="cfield"><label>Gold</label><input data-key="gold" type="color"></div><div class="cfield"><label>Background</label><input data-key="dark" type="color"></div>
+  </div></div>
+  <div class="customizer-pane" id="pane-effects"><div class="switch"><span>Floating hearts</span><input data-key="hearts" type="checkbox"></div><div class="switch"><span>Background particles</span><input data-key="particles" type="checkbox"></div><div class="switch"><span>Confetti + fireworks</span><input data-key="celebrations" type="checkbox"></div><div class="switch"><span>Auto-scroll after message</span><input data-key="autoScroll" type="checkbox"></div><div class="cfield"><label>Slideshow interval (seconds)</label><input data-key="slideInterval" type="number" min="2" max="20"></div></div>
+  <div class="customizer-pane" id="pane-media"><div class="cfield"><label>Background music file</label><input id="music-file" type="file" accept="audio/*"></div><div class="switch"><span>Start music when gift opens</span><input data-key="musicOnGift" type="checkbox"></div><p class="cnotice">For privacy, the selected local file stays in your browser storage and is not uploaded anywhere.</p></div>
+  <div class="customizer-actions"><button class="caction primary" onclick="applyCustomizer()">✓ Apply & Save</button><button class="caction" onclick="resetCustomizer()">Reset</button><button class="caction" onclick="exportCustomizer()">Export</button><button class="caction" onclick="document.getElementById('import-config').click()">Import</button><input id="import-config" type="file" accept="application/json" hidden></div>
+ </div>
+</div>
+
 <div id="loading">
   <div class="section">
     <div class="loading-content">
-      <div class="loading-text">✨ A Special Surprise is Waiting... ✨</div>
+      <div class="loading-text">♡ A Little Surprise, Made With Love ♡</div>
       <div class="loading-dots">
         <span></span><span></span><span></span>
       </div>
@@ -1061,9 +1021,9 @@
   <div class="hearts-float" id="hearts-container"></div>
   <div class="landing-inner">
     <span class="big-emoji">🎁</span>
-    <h1 class="landing-title">Someone Made This For You</h1>
-    <p class="landing-sub">A little something crafted with a lot of love ❤️</p>
-    <button class="begin-btn fancy-btn" onclick="scrollToSection(1)">Open Your Surprise 🎊</button>
+    <h1 class="landing-title">For My Love ♡</h1>
+    <p class="landing-sub">A little corner of the internet made just for you, with all my love ✨</p>
+    <button class="begin-btn fancy-btn" onclick="scrollToSection(1)">Open Your Surprise ♡</button>
   </div>
   <div class="scroll-hint">
     <span>Scroll</span>
@@ -1075,7 +1035,7 @@
      SECTION 2 — GIFT BOX
 ══════════════════════════════════════ -->
 <section class="section" id="gift-section" data-section="1">
-  <h2 class="gift-title">Tap The Gift Box 🎀</h2>
+  <h2 class="gift-title">Something Special Is Waiting For You ♡</h2>
   <div class="gift-box-wrap" id="gift-box" onclick="openGift()">
     <div class="gift-lid" id="gift-lid">
       <div class="gift-ribbon-h"></div>
@@ -1089,7 +1049,7 @@
     <div class="gift-stars" id="gift-stars"></div>
     <div class="gift-photo-burst-wrap" id="gift-photo-burst-wrap"></div>
   </div>
-  <p class="gift-hint" id="gift-hint">👆 Tap to open!</p>
+  <p class="gift-hint" id="gift-hint">♡ Tap to open your little surprise</p>
 </section>
 
 <!-- ══════════════════════════════════════
@@ -1097,12 +1057,12 @@
 ══════════════════════════════════════ -->
 <section class="section" id="message-section" data-section="2">
   <div class="msg-card">
-    <span class="msg-emoji">🎂</span>
+    <span class="msg-emoji">💗</span>
     <div class="typewriter-text" id="typewriter"></div>
     <p class="msg-body" id="msg-body" style="opacity:0;transition:opacity 1s">
-      <span id="msg-body-text">Today is a very special day because my little sister was born.<br><br>
-      You bring happiness, laughter, and endless smiles to our family.<br><br>
-      May all your dreams come true and may you always stay happy, healthy, and successful. ❤️</span>
+      Today is your special day, but honestly, every day feels a little more special because you’re in my life. ✨<br><br>
+      Thank you for being someone I can laugh with, talk to, make memories with, and simply be myself around.<br><br>
+      I hope this new year of your life brings you endless reasons to smile, beautiful moments to remember, and everything your heart wishes for. ❤️
     </p>
   </div>
   <div class="scroll-hint" style="position:relative;margin-top:40px;">
@@ -1115,8 +1075,8 @@
      SECTION 4 — MEMORIES
 ══════════════════════════════════════ -->
 <section class="section" id="memories-section" data-section="3">
-  <h2 class="section-title">Our Memories 📸</h2>
-  <p class="section-sub">These moments will always be remembered</p>
+  <h2 class="section-title">Us, In Little Moments 📸</h2>
+  <p class="section-sub">A few memories that I’ll always be happy to have with you ♡</p>
 
   <div class="slideshow-wrap">
     <div class="slide active" id="slide-0">
@@ -1125,7 +1085,7 @@
         <div class="polaroid-photo">
           <img src="photo1.jpg" alt="Memory 1" onerror="this.parentElement.style.background='linear-gradient(135deg,#444,#222)';this.style.display='none'">
         </div>
-        <div class="polaroid-caption">A beautiful childhood memory ❤️</div>
+        <div class="polaroid-caption">One of my favourite little moments ♡</div>
       </div>
     </div>
     <div class="slide" id="slide-1">
@@ -1134,7 +1094,7 @@
         <div class="polaroid-photo">
           <img src="photo2.jpg" alt="Memory 2" onerror="this.parentElement.style.background='linear-gradient(135deg,#444,#222)';this.style.display='none'">
         </div>
-        <div class="polaroid-caption">One of our happiest moments 😊</div>
+        <div class="polaroid-caption">A memory I’d choose again and again ✨</div>
       </div>
     </div>
     <div class="slide" id="slide-2">
@@ -1143,7 +1103,7 @@
         <div class="polaroid-photo">
           <img src="photo3.jpg" alt="Memory 3" onerror="this.parentElement.style.background='linear-gradient(135deg,#444,#222)';this.style.display='none'">
         </div>
-        <div class="polaroid-caption">A memory I will always cherish 🌸</div>
+        <div class="polaroid-caption">A moment that means more than it looks 🌷</div>
       </div>
     </div>
     <div class="slide" id="slide-3">
@@ -1152,7 +1112,7 @@
         <div class="polaroid-photo">
           <img src="photo4.jpg" alt="Memory 4" onerror="this.parentElement.style.background='linear-gradient(135deg,#444,#222)';this.style.display='none'">
         </div>
-        <div class="polaroid-caption">Having a sister like you is a blessing ❤️</div>
+        <div class="polaroid-caption">Lucky that our paths found each other ❤️</div>
       </div>
     </div>
 
@@ -1169,37 +1129,37 @@
      SECTION 5 — TIMELINE
 ══════════════════════════════════════ -->
 <section class="section" id="timeline-section" data-section="4">
-  <h2 class="section-title">Your Journey 🚀</h2>
-  <p class="section-sub">From childhood till today...</p>
+  <h2 class="section-title">Our Little Story ✨</h2>
+  <p class="section-sub">From the first little moments to everything we share now ♡</p>
 
   <div class="timeline" id="timeline">
     <div class="timeline-item">
       <div class="tl-dot"></div>
-      <div class="tl-year">👶 Childhood</div>
+      <div class="tl-year">✨ Then</div>
       <span class="tl-event-emoji">👶</span>
-      <div class="tl-title">Welcome to the World</div>
-      <div class="tl-desc">When you arrived, the world became a little brighter ✨</div>
+      <div class="tl-title">Before I Knew You</div>
+      <div class="tl-desc">Your story was already beautiful — I’m just grateful I get to be part of it now.</div>
     </div>
     <div class="timeline-item">
       <div class="tl-dot" style="background:var(--purple);box-shadow:0 0 15px var(--purple)"></div>
-      <div class="tl-year">📚 School Life</div>
+      <div class="tl-year">🌷 Then We Met</div>
       <span class="tl-event-emoji">📚</span>
-      <div class="tl-title">School Days</div>
-      <div class="tl-desc">New friends, new dreams, new stories 📖</div>
+      <div class="tl-title">The Moments That Became Ours</div>
+      <div class="tl-desc">Little conversations, silly moments, and memories that slowly became special.</div>
     </div>
     <div class="timeline-item">
       <div class="tl-dot" style="background:var(--blue);box-shadow:0 0 15px var(--blue)"></div>
-      <div class="tl-year">🌟 Growing Up</div>
+      <div class="tl-year">💗 Us</div>
       <span class="tl-event-emoji">🏆</span>
-      <div class="tl-title">Achievements</div>
-      <div class="tl-desc">You faced every challenge, won, and kept moving forward 💪</div>
+      <div class="tl-title">More Than Just Memories</div>
+      <div class="tl-desc">Some people simply become a beautiful part of your everyday life. You became that person for me.</div>
     </div>
     <div class="timeline-item">
       <div class="tl-dot" style="background:var(--gold);box-shadow:0 0 15px var(--gold)"></div>
-      <div class="tl-year">🎂 Birthday 2026</div>
+      <div class="tl-year">🎂 Today</div>
       <span class="tl-event-emoji">🌟</span>
-      <div class="tl-title">Today — Your Special Day</div>
-      <div class="tl-desc">Happy Birthday! Even better days are ahead 🚀</div>
+      <div class="tl-title">Today — Celebrating You</div>
+      <div class="tl-desc">Another year of you — and another year I get to wish you nothing but happiness. ✨</div>
     </div>
   </div>
 </section>
@@ -1217,19 +1177,19 @@
 
   <div class="cake-wrap">🎂</div>
 
-  <h2 class="final-title" id="final-title-text">Happy Birthday Najish Hasan! 🎉</h2>
+  <h2 class="final-title">Happy Birthday, My Love! 🎂♡</h2>
 
   <p class="final-msg">
-    <span id="final-msg-body">Dear Little Sister,<br><br>
-    This small website is a special gift made just for you.<br><br>
-    Thank you for filling our lives with happiness and laughter.<br><br>
-    May your birthday be as wonderful as you are.<br><br></span>
-    <strong id="final-msg-name">Happy Birthday Najish Hasan! ❤️🎂🎉</strong>
+    To the girl who makes my days a little brighter,<br><br>
+    I made this little surprise because you deserve something that feels as special as you are to me.<br><br>
+    Thank you for every laugh, every conversation, every silly moment, and every memory we’ve made together.<br><br>
+    I hope today makes you feel loved, appreciated, and incredibly special — because you truly are.<br><br>
+    <strong>Happy Birthday, My Love. Here’s to many more beautiful memories together. ❤️🎂✨</strong>
   </p>
 
-  <button class="share-btn fancy-btn" onclick="launchConfetti()">🎊 Celebrate! Launch Confetti</button>
+  <button class="share-btn fancy-btn" onclick="launchConfetti()">💗 Celebrate Our Love</button>
   <br>
-  <button class="secret-btn" onclick="openSecretLetter()">Open Secret Letter 💌</button>
+  <button class="secret-btn" onclick="openSecretLetter()">Open My Little Letter 💌</button>
 </section>
 
 <!-- ══════════════════════════════════════
@@ -1238,73 +1198,19 @@
 <div class="secret-overlay" id="secret-overlay" onclick="closeSecretLetterIfBackdrop(event)">
   <div class="secret-letter">
     <button class="secret-close" onclick="closeSecretLetter()">✕</button>
-    <p class="secret-letter-title" id="secret-letter-title-text">💌 A Secret Letter For My Little Sister</p>
-    <p class="secret-letter-text" id="secret-letter-text-content">
-      Dear Sister,<br><br>
-      Today is your special day, and I just want you to know how important you are to me.<br><br>
-      You may be younger than me, but you bring so much happiness, laughter, and energy into our lives.<br><br>
-      No matter how much we argue, tease each other, or fight over silly things, you will always be one of the most special people in my life.<br><br>
-      I am proud of the person you are becoming, and I hope you always believe in yourself and your dreams.<br><br>
-      May your life be filled with happiness, success, good health, and countless beautiful memories.<br><br>
-      Always keep smiling, because your smile makes everyone around you happy.<br><br>
-      Happy Birthday, my little sister. ❤️🎂<br><br>
-      With lots of love,<br>
-      Your Brother 💙
+    <p class="secret-letter-title">💌 A Little Letter For My Love</p>
+    <p class="secret-letter-text">
+      My Love,<br><br>
+      Today is all about celebrating you, and I just want you to know how grateful I am that you’re a part of my life.<br><br>
+      You have this beautiful way of making ordinary moments feel special, and somehow even the smallest memories with you stay with me.<br><br>
+      I love the laughs, the random conversations, the silly little moments, and all the memories we keep creating together.<br><br>
+      I hope you always keep chasing your dreams, believing in yourself, and being exactly who you are.<br><br>
+      On your birthday, I wish you happiness that lasts, dreams that come true, and countless moments that make your heart smile.<br><br>
+      And selfishly, I hope I get to be there for many of those moments with you. ❤️<br><br>
+      Happy Birthday, my love. 🎂💗<br><br>
+      With all my love,<br>
+      Yours ♡
     </p>
-  </div>
-</div>
-
-<!-- ══════════════════════════════════════
-     CUSTOMIZE PANEL
-══════════════════════════════════════ -->
-<button class="customize-fab" id="customize-fab" onclick="openCustomize()" aria-label="Customize this page">⚙️ Customize</button>
-
-<div class="customize-overlay" id="customize-overlay" onclick="closeCustomizeIfBackdrop(event)">
-  <div class="customize-panel">
-    <button class="secret-close" onclick="closeCustomize()">✕</button>
-    <h3 class="customize-title">✨ Customize Your Surprise</h3>
-    <p class="customize-sub">Change the details below, then hit Save. It's remembered on this device.</p>
-
-    <label class="cz-label">Nickname <span class="cz-hint">(watermark + greeting)</span></label>
-    <input type="text" id="cz-nickname" class="cz-input" placeholder="e.g. Najiya">
-
-    <label class="cz-label">Full Name <span class="cz-hint">(final banner)</span></label>
-    <input type="text" id="cz-fullname" class="cz-input" placeholder="e.g. Najish Hasan">
-
-    <label class="cz-label">Relation</label>
-    <select id="cz-relation" class="cz-input">
-      <option value="Little Sister">Little Sister</option>
-      <option value="Little Brother">Little Brother</option>
-      <option value="Sister">Sister</option>
-      <option value="Brother">Brother</option>
-      <option value="Best Friend">Best Friend</option>
-      <option value="Love">Love</option>
-      <option value="Daughter">Daughter</option>
-      <option value="Son">Son</option>
-    </select>
-
-    <label class="cz-label">Your Signature <span class="cz-hint">(secret letter sign-off)</span></label>
-    <input type="text" id="cz-signature" class="cz-input" placeholder="e.g. Your Brother">
-
-    <label class="cz-label">Theme</label>
-    <select id="cz-theme" class="cz-input">
-      <option value="pink">🌸 Pink Dream (default)</option>
-      <option value="sunset">🌇 Sunset Gold</option>
-      <option value="galaxy">💜 Purple Galaxy</option>
-      <option value="ocean">🌊 Ocean Breeze</option>
-    </select>
-
-    <label class="cz-label">Birthday Message</label>
-    <textarea id="cz-message" class="cz-textarea" rows="4"></textarea>
-
-    <label class="cz-label">Secret Letter</label>
-    <textarea id="cz-letter" class="cz-textarea" rows="6"></textarea>
-
-    <div class="cz-actions">
-      <button class="cz-btn cz-btn-reset" onclick="resetCustomize()">Reset to Default</button>
-      <button class="cz-btn cz-btn-save" onclick="saveCustomize()">Save Changes</button>
-    </div>
-    <p class="cz-saved-note" id="cz-saved-note"></p>
   </div>
 </div>
 
@@ -1430,7 +1336,7 @@ function openGift() {
   // Background music starts (Sabse impactful)
   const bgm = document.getElementById('bgm');
   bgm.volume = 0.5;
-  bgm.play().catch(() => {});
+  if (window._customMusicOnGift !== false) bgm.play().catch(() => {});
   document.getElementById('music-toggle').style.display = 'flex';
 
   // Voice greeting
@@ -1490,7 +1396,7 @@ function openGift() {
 // ══════════════════════
 function startTypewriter() {
   const el   = document.getElementById('typewriter');
-  const text = window.CZ_CONFIG ? `Happy Birthday My Cute ${window.CZ_CONFIG.relation} ❤️` : 'Happy Birthday My Cute Little Sister ❤️';
+  const text = 'Happy Birthday, My Love ♡';
   let i = 0;
   function type() {
     if (i < text.length) {
@@ -1501,7 +1407,7 @@ function startTypewriter() {
         document.getElementById('msg-body').style.opacity = '1';
       }, 400);
       // Auto scroll after message is fully visible
-      setTimeout(() => startAutoScroll(), 3000);
+      setTimeout(() => { if(window._customAutoScroll !== false) startAutoScroll(); }, 3000);
     }
   }
   // Start when section comes into view
@@ -1529,7 +1435,7 @@ function initSlider() {
   }
   updateMemoryCounter();
   // Auto-advance
-  setInterval(() => changeSlide(1), 4000);
+  setInterval(() => changeSlide(1), (Number(window._customSlideInterval)||4)*1000);
 }
 
 function changeSlide(dir) {
@@ -1568,7 +1474,7 @@ function setupScrollObserver() {
 // ══════════════════════
 let confettiActive = false;
 
-function launchConfetti() {
+function launchConfetti() { if (window._customCelebrations === false) return;
   const canvas = document.getElementById('confetti-canvas');
   canvas.style.display = 'block';
   canvas.width  = window.innerWidth;
@@ -1702,145 +1608,6 @@ function closeSecretLetterIfBackdrop(e) {
 }
 
 // ══════════════════════
-// CUSTOMIZE PANEL
-// ══════════════════════
-const CZ_DEFAULTS = {
-  nickname: 'Najiya',
-  fullname: 'Najish Hasan',
-  relation: 'Little Sister',
-  signature: 'Your Brother',
-  theme: 'pink',
-  message: 'Today is a very special day because my little sister was born.\n\nYou bring happiness, laughter, and endless smiles to our family.\n\nMay all your dreams come true and may you always stay happy, healthy, and successful. ❤️',
-  letter: 'Dear Sister,\n\nToday is your special day, and I just want you to know how important you are to me.\n\nYou may be younger than me, but you bring so much happiness, laughter, and energy into our lives.\n\nNo matter how much we argue, tease each other, or fight over silly things, you will always be one of the most special people in my life.\n\nI am proud of the person you are becoming, and I hope you always believe in yourself and your dreams.\n\nMay your life be filled with happiness, success, good health, and countless beautiful memories.\n\nAlways keep smiling, because your smile makes everyone around you happy.\n\nHappy Birthday, my little sister. ❤️🎂\n\nWith lots of love,\nYour Brother 💙'
-};
-
-const CZ_THEMES = {
-  pink:   { pink:'#ff6b9d', rose:'#ff4081', peach:'#ffb347', gold:'#ffd700', purple:'#c471ed', blue:'#12c2e9' },
-  sunset: { pink:'#ff8a5c', rose:'#ff5e62', peach:'#ffc93c', gold:'#ffe066', purple:'#ff6b9d', blue:'#ff9770' },
-  galaxy: { pink:'#c471ed', rose:'#a239ea', peach:'#f7797d', gold:'#e0aaff', purple:'#7b2ff7', blue:'#3a0ca3' },
-  ocean:  { pink:'#12c2e9', rose:'#0891b2', peach:'#5ee7df', gold:'#a0f0ed', purple:'#6a5af9', blue:'#00b4d8' }
-};
-
-function loadConfig() {
-  try {
-    const saved = JSON.parse(localStorage.getItem('birthdaySiteConfig'));
-    return saved ? { ...CZ_DEFAULTS, ...saved } : { ...CZ_DEFAULTS };
-  } catch (e) { return { ...CZ_DEFAULTS }; }
-}
-
-function textToHtml(str) {
-  return str.split('\n').map(line => line.trim()).join('<br>').replace(/(<br>){2,}/g, '<br><br>');
-}
-
-function renderWatermark(nickname) {
-  const layer = document.getElementById('watermark-layer');
-  layer.innerHTML = '';
-  const positions = [
-    { left: '12%', delay: '0s' },
-    { left: '38%', delay: '-18s' },
-    { left: '64%', delay: '-32s' },
-    { left: '90%', delay: '-9s' }
-  ];
-  positions.forEach(pos => {
-    const col = document.createElement('div');
-    col.className = 'watermark-col';
-    col.style.left = pos.left;
-    col.style.animationDelay = pos.delay;
-    col.textContent = Array(6).fill(nickname + ' ❤️').join('\n');
-    layer.appendChild(col);
-  });
-}
-
-function applyTheme(themeKey) {
-  const t = CZ_THEMES[themeKey] || CZ_THEMES.pink;
-  const root = document.documentElement.style;
-  root.setProperty('--pink', t.pink);
-  root.setProperty('--rose', t.rose);
-  root.setProperty('--peach', t.peach);
-  root.setProperty('--gold', t.gold);
-  root.setProperty('--purple', t.purple);
-  root.setProperty('--blue', t.blue);
-}
-
-function applyConfig(cfg) {
-  window.CZ_CONFIG = cfg;
-  applyTheme(cfg.theme);
-  renderWatermark(cfg.nickname);
-
-  document.title = `A Special Surprise for ${cfg.nickname} 🎂`;
-  document.getElementById('final-title-text').innerHTML = `Happy Birthday ${cfg.fullname}! 🎉`;
-  document.getElementById('final-msg-name').innerHTML = `Happy Birthday ${cfg.fullname}! ❤️🎂🎉`;
-  document.getElementById('secret-letter-title-text').innerHTML = `💌 A Secret Letter For My ${cfg.relation}`;
-  document.getElementById('msg-body-text').innerHTML = textToHtml(cfg.message);
-  document.getElementById('secret-letter-text-content').innerHTML = textToHtml(cfg.letter);
-
-  const finalBody = document.getElementById('final-msg-body');
-  if (finalBody) finalBody.innerHTML = `Dear ${cfg.relation},<br><br>This small website is a special gift made just for you.<br><br>Thank you for filling our lives with happiness and laughter.<br><br>May your birthday be as wonderful as you are.<br><br>`;
-
-  // Reset typewriter so it re-types with the new name next time message section is viewed
-  const tw = document.getElementById('typewriter');
-  if (tw) tw.textContent = '';
-}
-
-function populateCustomizeForm(cfg) {
-  document.getElementById('cz-nickname').value = cfg.nickname;
-  document.getElementById('cz-fullname').value = cfg.fullname;
-  document.getElementById('cz-relation').value = cfg.relation;
-  document.getElementById('cz-signature').value = cfg.signature;
-  document.getElementById('cz-theme').value = cfg.theme;
-  document.getElementById('cz-message').value = cfg.message;
-  document.getElementById('cz-letter').value = cfg.letter;
-}
-
-function openCustomize() {
-  populateCustomizeForm(window.CZ_CONFIG || loadConfig());
-  document.getElementById('customize-overlay').classList.add('show');
-}
-function closeCustomize() {
-  document.getElementById('customize-overlay').classList.remove('show');
-}
-function closeCustomizeIfBackdrop(e) {
-  if (e.target.id === 'customize-overlay') closeCustomize();
-}
-
-function saveCustomize() {
-  let letterText = document.getElementById('cz-letter').value;
-  const sig = document.getElementById('cz-signature').value.trim() || 'Your Brother';
-  // Ensure the sign-off in the letter reflects the signature field
-  letterText = letterText.replace(/\n(Your Brother|Your Sister|Yours truly|.*?)\s*(💙|❤️)?\s*$/, `\n${sig} 💙`);
-
-  const cfg = {
-    nickname:  document.getElementById('cz-nickname').value.trim()  || CZ_DEFAULTS.nickname,
-    fullname:  document.getElementById('cz-fullname').value.trim()  || CZ_DEFAULTS.fullname,
-    relation:  document.getElementById('cz-relation').value,
-    signature: sig,
-    theme:     document.getElementById('cz-theme').value,
-    message:   document.getElementById('cz-message').value.trim()   || CZ_DEFAULTS.message,
-    letter:    letterText.trim() || CZ_DEFAULTS.letter
-  };
-  localStorage.setItem('birthdaySiteConfig', JSON.stringify(cfg));
-  applyConfig(cfg);
-
-  const note = document.getElementById('cz-saved-note');
-  note.textContent = '✓ Saved! Your changes are live.';
-  note.classList.add('show');
-  setTimeout(() => note.classList.remove('show'), 2500);
-}
-
-function resetCustomize() {
-  localStorage.removeItem('birthdaySiteConfig');
-  applyConfig({ ...CZ_DEFAULTS });
-  populateCustomizeForm(CZ_DEFAULTS);
-  const note = document.getElementById('cz-saved-note');
-  note.textContent = 'Reset to default ✨';
-  note.classList.add('show');
-  setTimeout(() => note.classList.remove('show'), 2500);
-}
-
-// Apply saved (or default) config as early as possible
-applyConfig(loadConfig());
-
-// ══════════════════════
 // AUTO SCROLL
 // ══════════════════════
 let autoScrollTimer = null;
@@ -1875,5 +1642,37 @@ document.addEventListener('keydown', e => {
   }
 });
 </script>
+
+<script>
+/* ═══ LIVE CUSTOMIZER ═══ */
+const CUSTOM_KEY='loveBirthdayCustomizer_v1';
+const defaultCustom={landingTitle:'For My Love ♡',landingSub:'A little corner of the internet made just for you, with all my love ✨',openButton:'Open Your Surprise ♡',giftTitle:'Something Special Is Waiting For You ♡',giftHint:'♡ Tap to open your little surprise',birthdayHeading:'Happy Birthday, My Love ♡',birthdayMessage:'Today is your special day, but honestly, every day feels a little more special because you’re in my life. ✨\n\nThank you for being someone I can laugh with, talk to, make memories with, and simply be myself around.\n\nI hope this new year of your life brings you endless reasons to smile, beautiful moments to remember, and everything your heart wishes for. ❤️',memoriesTitle:'Us, In Little Moments 📸',memoriesSub:'A few memories that I’ll always be happy to have with you ♡',storyTitle:'Our Little Story ✨',storySub:'From the first little moments to everything we share now ♡',finalTitle:'Happy Birthday, My Love! 🎂♡',celebrateButton:'💗 Celebrate Our Love',finalMessage:'To the girl who makes my days a little brighter,\n\nI made this little surprise because you deserve something that feels as special as you are to me.\n\nThank you for every laugh, every conversation, every silly moment, and every memory we’ve made together.\n\nI hope today makes you feel loved, appreciated, and incredibly special — because you truly are.\n\nHappy Birthday, My Love. Here’s to many more beautiful memories together. ❤️🎂✨',letterText:'My Love,\n\nToday is all about celebrating you, and I just want you to know how grateful I am that you’re a part of my life.\n\nYou have this beautiful way of making ordinary moments feel special, and somehow even the smallest memories with you stay with me.\n\nI love the laughs, the random conversations, the silly little moments, and all the memories we keep creating together.\n\nI hope you always keep chasing your dreams, believing in yourself, and being exactly who you are.\n\nOn your birthday, I wish you happiness that lasts, dreams that come true, and countless moments that make your heart smile.\n\nAnd selfishly, I hope I get to be there for many of those moments with you. ❤️\n\nHappy Birthday, my love. 🎂💗\n\nWith all my love,\nYours ♡',pink:'#ff6b9d',rose:'#ff4081',purple:'#c471ed',blue:'#12c2e9',gold:'#ffd700',dark:'#1a0a2e',hearts:true,particles:true,celebrations:true,autoScroll:true,musicOnGift:true,slideInterval:4,musicData:''};
+const defaultMem=[['photo1.jpg','One of my favourite little moments ♡'],['photo2.jpg','A memory I’d choose again and again ✨'],['photo3.jpg','A moment that means more than it looks 🌷'],['photo4.jpg','Lucky that our paths found each other ❤️']];
+const defaultStory=[['✨ Then','👶','Before I Knew You','Your story was already beautiful — I’m just grateful I get to be part of it now.'],['🌷 Then We Met','📚','The Moments That Became Ours','Little conversations, silly moments, and memories that slowly became special.'],['💗 Us','🏆','More Than Just Memories','Some people simply become a beautiful part of your everyday life. You became that person for me.'],['🎂 Today','🌟','Today — Celebrating You','Another year of you — and another year I get to wish you nothing but happiness. ✨']];
+let custom=loadCustom(), memories=loadJSON('loveBirthdayMemories_v1',defaultMem), stories=loadJSON('loveBirthdayStories_v1',defaultStory);
+function loadJSON(k,d){try{return JSON.parse(localStorage.getItem(k))||JSON.parse(JSON.stringify(d))}catch(e){return JSON.parse(JSON.stringify(d))}}
+function loadCustom(){try{return {...defaultCustom,...JSON.parse(localStorage.getItem(CUSTOM_KEY)||'{}')}}catch(e){return {...defaultCustom}}}
+function openCustomizer(){document.getElementById('customizer-overlay').classList.add('show');populateCustomizer()}
+function closeCustomizer(){document.getElementById('customizer-overlay').classList.remove('show')}
+function customizerBackdrop(e){if(e.target.id==='customizer-overlay')closeCustomizer()}
+document.querySelectorAll('.customizer-tab').forEach(b=>b.onclick=()=>{document.querySelectorAll('.customizer-tab').forEach(x=>x.classList.remove('active'));document.querySelectorAll('.customizer-pane').forEach(x=>x.classList.remove('active'));b.classList.add('active');document.getElementById('pane-'+b.dataset.pane).classList.add('active')});
+function populateCustomizer(){document.querySelectorAll('[data-key]').forEach(el=>{if(custom[el.dataset.key]===undefined)return;if(el.type==='checkbox')el.checked=!!custom[el.dataset.key];else el.value=custom[el.dataset.key]});
+ const me=document.getElementById('memory-editor');me.innerHTML='';memories.forEach((m,i)=>{me.innerHTML+=`<div class="photo-row"><div class="cfield"><label>Memory ${i+1} caption</label><input id="mc${i}" type="text" value="${esc(m[1])}"></div><div class="cfield"><label>Memory ${i+1} photo</label><input id="mf${i}" type="file" accept="image/*"></div></div>`});
+ const se=document.getElementById('story-editor');se.innerHTML='';stories.forEach((x,i)=>{se.innerHTML+=`<div class="photo-row"><b>Story ${i+1}</b><div class="cfield"><label>Label</label><input id="sy${i}" type="text" value="${esc(x[0])}"></div><div class="cfield"><label>Emoji</label><input id="se${i}" type="text" value="${esc(x[1])}"></div><div class="cfield"><label>Title</label><input id="st${i}" type="text" value="${esc(x[2])}"></div><div class="cfield"><label>Description</label><textarea id="sd${i}">${esc(x[3])}</textarea></div></div>`})}
+function esc(v){return String(v).replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/"/g,'&quot;')}
+function readFields(){document.querySelectorAll('[data-key]').forEach(el=>{custom[el.dataset.key]=el.type==='checkbox'?el.checked:el.value});custom.slideInterval=Math.max(2,Math.min(20,Number(custom.slideInterval)||4));}
+function fileToData(file){return new Promise((res,rej)=>{if(!file)return res(null);const r=new FileReader();r.onload=()=>res(r.result);r.onerror=rej;r.readAsDataURL(file)})}
+async function applyCustomizer(){readFields();for(let i=0;i<4;i++){const f=document.getElementById('mf'+i)?.files[0];if(f)memories[i][0]=await fileToData(f);memories[i][1]=document.getElementById('mc'+i)?.value||memories[i][1];stories[i]=[document.getElementById('sy'+i)?.value||'',document.getElementById('se'+i)?.value||'',document.getElementById('st'+i)?.value||'',document.getElementById('sd'+i)?.value||'']}
+ const mf=document.getElementById('music-file')?.files[0];if(mf)custom.musicData=await fileToData(mf);localStorage.setItem(CUSTOM_KEY,JSON.stringify(custom));localStorage.setItem('loveBirthdayMemories_v1',JSON.stringify(memories));localStorage.setItem('loveBirthdayStories_v1',JSON.stringify(stories));applyAll();closeCustomizer()}
+function applyAll(){const root=document.documentElement;['pink','rose','purple','blue','gold','dark'].forEach(k=>root.style.setProperty('--'+k,custom[k]));
+ setText('.landing-title',custom.landingTitle);setText('.landing-sub',custom.landingSub);setText('.begin-btn',custom.openButton);setText('.gift-title',custom.giftTitle);setText('#gift-hint',custom.giftHint);setText('.typewriter-text',custom.birthdayHeading);setText('.msg-body',custom.birthdayMessage);setText('#memories-section .section-title',custom.memoriesTitle);setText('#memories-section .section-sub',custom.memoriesSub);setText('#timeline-section .section-title',custom.storyTitle);setText('#timeline-section .section-sub',custom.storySub);setText('.final-title',custom.finalTitle);setText('.final-msg',custom.finalMessage);setText('.share-btn',custom.celebrateButton);setText('.secret-letter-text',custom.letterText);memories.forEach((m,i)=>{const img=document.querySelector('#slide-'+i+' .polaroid-photo img');if(img){img.src=m[0];img.style.display='block'}setText('#slide-'+i+' .polaroid-caption',m[1])});stories.forEach((x,i)=>{const item=document.querySelectorAll('.timeline-item')[i];if(item){setText('.tl-year',x[0],item);setText('.tl-event-emoji',x[1],item);setText('.tl-title',x[2],item);setText('.tl-desc',x[3],item)}});
+ document.getElementById('hearts-container').style.display=custom.hearts?'':'none';document.getElementById('particles-canvas').style.display=custom.particles?'':'none';if(custom.musicData){document.getElementById('bgm').src=custom.musicData}window._customCelebrations=custom.celebrations;window._customAutoScroll=custom.autoScroll;window._customMusicOnGift=custom.musicOnGift;window._customSlideInterval=custom.slideInterval;}
+function setText(sel,text,scope=document){const el=scope.querySelector(sel);if(!el)return;if(el.tagName==='TEXTAREA'||el.tagName==='INPUT')el.value=text;else el.innerHTML=String(text).replace(/\n/g,'<br>')}
+function resetCustomizer(){localStorage.removeItem(CUSTOM_KEY);localStorage.removeItem('loveBirthdayMemories_v1');localStorage.removeItem('loveBirthdayStories_v1');location.reload()}
+function exportCustomizer(){const data={custom,memories,stories};const a=document.createElement('a');a.href=URL.createObjectURL(new Blob([JSON.stringify(data,null,2)],{type:'application/json'}));a.download='love-birthday-customization.json';a.click();URL.revokeObjectURL(a.href)}
+document.getElementById('import-config').addEventListener('change',e=>{const f=e.target.files[0];if(!f)return;const r=new FileReader();r.onload=()=>{try{const d=JSON.parse(r.result);if(d.custom)custom={...defaultCustom,...d.custom};if(d.memories)memories=d.memories;if(d.stories)stories=d.stories;localStorage.setItem(CUSTOM_KEY,JSON.stringify(custom));localStorage.setItem('loveBirthdayMemories_v1',JSON.stringify(memories));localStorage.setItem('loveBirthdayStories_v1',JSON.stringify(stories));applyAll();populateCustomizer();alert('Customization imported ♡')}catch(err){alert('Invalid customization file')}};r.readAsText(f)});
+applyAll();
+</script>
+
 </body>
 </html>
